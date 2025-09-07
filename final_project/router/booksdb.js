@@ -1,7 +1,7 @@
 let books = {
       1: {"author": "Chinua Achebe","title": "Things Fall Apart", "reviews": {} },
-      2: {"author": "Hans Christian Andersen","title": "Fairy tales", "reviews": {"1": "highly recommend!", "2": "An enjoyable read",} },
-      3: {"author": "Dante Alighieri","title": "The Divine Comedy", "reviews": {"1": "Beautifully written", "2": "" } },
+      2: {"author": "Hans Christian Andersen","title": "Fairy tales", "reviews": {"1": "highly recommend!", "2": "An enjoyable read"} },
+      3: {"author": "Dante Alighieri","title": "The Divine Comedy", "reviews": {"1": "Beautifully written"} },
       4: {"author": "Unknown","title": "The Epic Of Gilgamesh", "reviews": {"1": "Interesting story","2": "Loved it"} },
       5: {"author": "Unknown","title": "The Book Of Job", "reviews": {"1": "Great read","2": "Enjoyed it","3": "Good read"} },
       6: {"author": "Unknown","title": "One Thousand and One Nights", "reviews": {"1": "Not bad","2": "Enjoyed it"} },

@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require("axios");
 let books = require("./booksdb.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
@@ -64,5 +65,54 @@ public_users.get('/review/:isbn',function (req, res) {
   const isbn = req.params.isbn;
   res.send(books[isbn].reviews);
 });
+
+
+
+// Get the list of books (with async/await)
+public_users.get('/async/books', async (req, res) => {
+    try {
+      const response = await axios.get("http://localhost:5000/");
+      res.send(response.data);
+    } catch (error) {
+      res.status(500).send({ message: error.message });
+    }
+  });
+  
+
+  // Get book details by ISBN (with async/await)
+  public_users.get('/async/isbn/:isbn', async (req, res) => {
+    try {
+      const isbn = req.params.isbn;
+      const response = await axios.get(`http://localhost:5000/isbn/${isbn}`);
+      res.send(response.data);
+    } catch (error) {
+      res.status(500).send({ message: error.message });
+    }
+  });
+  
+
+  // Get book details by Author (with async/await)
+  public_users.get('/async/author/:author', async (req, res) => {
+    try {
+      const author = req.params.author;
+      const response = await axios.get(`http://localhost:5000/author/${author}`);
+      res.send(response.data);
+    } catch (error) {
+      res.status(500).send({ message: error.message });
+    }
+  });
+  
+
+  // Get book details by Title (with async/await)
+  public_users.get('/async/title/:title', async (req, res) => {
+    try {
+      const title = req.params.title;
+      const response = await axios.get(`http://localhost:5000/title/${title}`);
+      res.send(response.data);
+    } catch (error) {
+      res.status(500).send({ message: error.message });
+    }
+  });
+
 
 module.exports.general = public_users;
